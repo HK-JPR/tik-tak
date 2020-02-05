@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="CustomScript.js"></script>
+
+    <style>
+        td {
+            height: 100px;
+            text-align: center;
+            font-size: 53px;
+            width: 33.33%;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>Tic Tac Toe</h1>
+            <div class="col-sm-12">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-3">
+                    <label>Player 1 <input type="text" id="player1" /></label><br />
+                    <label>Player 2 <input type="text" id="player2" /></label><br />
+                    <input type="button" id="SetPlayerName" class="btn btn-danger" value="Set Name" />
+                    <input type="button" id="RandomName" class="btn btn info" value="RandomName" />
+                </div>
+            </div>
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <h3 id="GreetingText"></h3>
+                <table class="table table-bordered">
+                    <tr>
+                        <td id="R1C1"></td>
+                        <td id="R1C2"></td>
+                        <td id="R1C3"></td>
+                    </tr>
+                    <tr>
+                        <td id="R2C1"></td>
+                        <td id="R2C2"></td>
+                        <td id="R2C3"></td>
+                    </tr>
+                    <tr>
+                        <td id="R3C1"></td>
+                        <td id="R3C2"></td>
+                        <td id="R3C3"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
