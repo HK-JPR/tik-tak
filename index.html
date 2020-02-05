@@ -5,14 +5,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="CustomScript.js"></script>
-    <title>Tic Tac Toe</title>
+
     <style>
         td {
             height: 100px;
             text-align: center;
             font-size: 53px;
             width: 33.33%;
-            border: 1px solid black;
+            border: 1px solid black !important;
+        }
+        #Timer{
+            text-align: center;
         }
     </style>
 </head>
@@ -22,7 +25,12 @@
         <div class="row">
             <h1>Tic Tac Toe</h1>
             <div class="col-sm-12">
-                <div class="col-sm-3"></div>
+                <h1 id="Timer"></h1>
+            </div>
+            <div class="col-sm-12">
+                <div class="col-sm-3">
+                    
+                </div>
                 <div class="col-sm-3">
                     <label>Player 1 <input type="text" id="player1" /></label><br />
                     <label>Player 2 <input type="text" id="player2" /></label><br />
