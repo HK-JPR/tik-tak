@@ -1,4 +1,4 @@
-﻿(function ($) {
+(function ($) {
     $(function () {
         var Player1Name = "";
         var Player2Name = "";
@@ -12,8 +12,8 @@
 
 
         $("#RandomName").on("click", function () {
-            Player1Name = "John";
-            Player2Name = "Johnny";
+            Player1Name = "Virat";
+            Player2Name = "Rohit";
             SetPlayer();
         })
 
@@ -39,12 +39,12 @@
                 if (TdClass == "") {
                     count += 1;
                     if (count % 2 == 0) {
-                        $("#GreetingText").text(Player1Name + "'s Turn (♪)");
+                        $("#GreetingText").html(Player1Name + "'s Turn (♪)");
                         $(this).addClass("bg-info");
                         $(this).text("♫")
                     }
                     else {
-                        $("#GreetingText").text(Player2Name + "'s Turn (♫)");
+                        $("#GreetingText").html(Player2Name + "'s Turn (♫)");
                         $(this).addClass("bg-danger");
                         $(this).text("♪")
                     }
@@ -92,21 +92,35 @@
             return won;
         }
 
+        //Timer for restart game
+        function timer() {
+            var time = 5
+            var myTime = setInterval(function () {
+                $("#Timer").html("Game will restart in <b class=text-info>" + time + "</b> Sec.");
+                time--;
+                if (time == 0) {
+                    clearInterval(myTime);
+                    location.reload(true);
+                }
+            }, 1000);
+        }
+
+
         //Alert Match Result
         function AlertWon(winner) {
             if (winner == "bg-danger") {
                 $("#GreetingText").text(Player1Name + " Won this match ♥");
                 $("td").off("click");
-                setTimeout(function () { location.reload(true); }, 10000);
+                timer();
             }
             else if (winner == "bg-info") {
                 $("#GreetingText").text(Player2Name + " Won this match ♥");
                 $("td").off("click");
-                setTimeout(function () { location.reload(true); }, 10000);
+                timer();
             }
             else if (winner == "Tie") {
                 $("#GreetingText").text("Match Tie ☺");
-                setTimeout(function () { location.reload(true); }, 10000);
+                timer();
             }
         }
     });
