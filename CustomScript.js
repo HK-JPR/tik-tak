@@ -21,6 +21,8 @@
 
         //For Set Player Name And hide button
         function SetPlayer() {
+            Player1Name=!Player1Name?"Virat":Player1Name;
+            Player2Name=!Player2Name?"Rohit":Player2Name;
             $("#player1").parent().text("Player 1 :" + Player1Name).addClass("text-danger");
             $("#player2").parent().text("Player 2 :" + Player2Name).addClass("text-info");;
             $("#SetPlayerName").hide();
@@ -32,7 +34,7 @@
         //Click on any cloumn on grid
         $("td").on("click", function () {
             if (Player1Name == "" && Player2Name == "") {
-                alert("Please Enter Players Name for Start Game")
+                alert("Please Enter Players Name for Start Game");
             }
             else {
                 var TdClass = $(this).prop("class");
